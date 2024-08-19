@@ -43,6 +43,10 @@ const userSchema = mongoose.Schema(
       minLength: [1, "Users Bio should be greater than 1 character."],
       maxLength: [160, "Users bio must not be greater than 160 characters."],
     },
+    followers: {
+      type: Number,
+      default: 0,
+    },
     location: {
       type: String,
       trim: true,

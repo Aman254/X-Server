@@ -40,20 +40,19 @@ export const updateUser = async (req, res, next) => {
   try {
     const id = req.params.id;
 
-    const userData = req.body(bio, category);
+    const data = req.body;
 
-    if (!userData) {
-      throw createHttpError("Bhai Bhai");
+    if (!data || !id) {
+      throw createHttpError.BadRequest("Please provide a valid ID or Data.");
     }
 
-    const updatedUser = await UserModel.findByIdAndUpdate(id, userData, {
+    const updatedUser = await UserModel.findByIdAndUpdate(id, data, {
       new: true,
       runValidators: true,
     });
 
     res.status(201).json({
-      status: "sucess",
-      message: "sucessfully modified",
+      status: "Sucess.",
       data: {
         updatedUser,
       },

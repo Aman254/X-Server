@@ -1,6 +1,6 @@
 import createHttpError from "http-errors";
 import validator from "validator";
-import { UserModel } from "../src/Models/index.js";
+import { UserModel } from "../Models/index.js";
 
 export const createUser = async (userData) => {
   const { name, email, password, picture, bio, website } = userData;

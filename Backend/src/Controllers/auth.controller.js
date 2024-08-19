@@ -1,5 +1,5 @@
 import createHttpError from "http-errors";
-import { createUser } from "../../Services/auth.service.js";
+import { createUser } from "../Services/auth.service.js";
 
 export const register = async (req, res, next) => {
   try {
@@ -47,7 +47,7 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
   try {
-    throw createHttpError("Error hain Bhai");
+    const { email, password } = req.body;
   } catch (error) {
     next(error);
   }
