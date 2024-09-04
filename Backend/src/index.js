@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 let server;
 server = app.listen(PORT, () => {
-  logger.info(`App Running on Port: ${PORT}`);
+  logger.info(`App is  Running on Port: ${PORT}`);
 });
 
 const existHandler = () => {
